@@ -1,0 +1,41 @@
+<%- include("partials/header") -%>
+
+
+
+<section id="hero" class="d-flex align-items-center">
+    <div class="container text-center position-relative" data-aos="fade-in" data-aos-delay="200">
+        <h1>Simpe Notes Web using Express JS</h1>
+        <h2>explore yout notes below</h2>
+        <a href="#contact" class="btn-get-started scrollto">Show Notes</a>
+    </div>
+</section>
+
+<main id="main">
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12" data-aos="fade-up" data-aos-delay="100">        
+                    <div class="info mt-4">
+                        <i class="bi bi-geo-alt"></i>
+                        <h4>Dummy</h4>
+                        <p style="padding-left: 60px;"><%= startingContent %></p>
+                    </div>
+                    <%  postArray.forEach(function(post){ %>
+                    <div class="info mt-4">
+                        <i class="bi bi-geo-alt"></i>
+                        <h4><%= post.title %></h4>
+                        <p style="padding-left: 60px;"><%= post.body.slice(0,200)+"... " %></p>
+                        <p style="padding-left: 60px;"><a href="/posts/<%= post.title %>">Read More</a></p>
+                    </div>
+                    <% }) %>
+                </div>
+            </div>
+        </div>
+
+        </div>
+    </section><!-- End Contact Section -->
+
+</main><!-- End #main -->
+
+<%- include("partials/footer") -%>
